@@ -14,9 +14,4 @@ final class SecurityController extends AbstractController
 
     }
 
-    #[Route('/api/test', name: 'api_test', methods: ['GET'])]
-    public function apiTest():JsonResponse
-    {
-        return $this->json(['message'=>'Return this message from controller !']);
-    }
 }
