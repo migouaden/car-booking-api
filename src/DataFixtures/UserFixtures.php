@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class AppFixtures extends Fixture
+class UserFixtures extends Fixture
 {
     public function __construct(private UserPasswordHasherInterface $passwordHasher) 
     {
@@ -19,6 +19,7 @@ class AppFixtures extends Fixture
         $user = new User();
 
         $user->setEmail('admin@mail.com');
+        $user->setRoles(['ROLE_ADMIN']);
 
         $hashedPassword = $this->passwordHasher->hashPassword($user,'123456');
 
